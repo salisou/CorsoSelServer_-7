@@ -161,4 +161,14 @@ FROM Studenti
 where Sesso = 'M';
 
 
+-- Ultimi righe 
+SELECT *
+FROM(
+    SELECT TOP 5 * 
+    FROM Studenti
+    ORDER BY StudenteId DESC
+) AS Ulitmi
+ORDER BY StudenteId ASC
+
+
 
