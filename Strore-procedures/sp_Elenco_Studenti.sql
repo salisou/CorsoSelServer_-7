@@ -22,4 +22,3 @@ BEGIN
 	FROM Studenti 
 END
 GO
-

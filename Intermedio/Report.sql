@@ -95,3 +95,29 @@ FROM Studenti s
 INNER JOIN Iscrizioni i
     ON i.StudenteId = s.StudenteId
 
+SELECT * FROM Pagamenti
+
+SELECT *
+FROM Studenti s
+INNER JOIN Iscrizioni AS i
+	ON s.StudenteId = i.StudenteId
+INNER JOIN Pagamenti AS paga 
+	ON paga.IscrizioneId = i.IscrizioneId
+INNER JOIN Corsi AS c
+	ON c.CorsoId = i.CorsoId
+INNER JOIN AnniScolastici AS a
+	ON a.AnnoScolasticoId = i.AnnoScolasticoId
+INNER JOIN Classi AS cl
+	ON cl.ClasseId = s.ClasseId
+INNER JOIN Presenze AS p
+	ON p.StudenteId = s.StudenteId
+INNER JOIN Lezioni AS l
+	ON l.CorsoId = c.CorsoId
+INNER JOIN Aule AS al
+	ON al.AulaId = l.AulaId
+INNER JOIN Docenti AS d
+	ON d.DocenteId = l.DocenteId
+INNER JOIN DocentiCorsi AS dc
+	ON dc.DocenteId = d.DocenteId
+INNER JOIN Voti AS v
+	ON v.IscrizioneId = i.IscrizioneId 
